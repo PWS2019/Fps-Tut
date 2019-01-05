@@ -15,8 +15,7 @@ public class Weapon : MonoBehaviour
 
     public Camera fpsCam;
     Animation m_Animator;
-
-    private bool Patat = true;
+    public AudioSource AK_47;
 
     private void Start()
     {
@@ -36,6 +35,8 @@ public class Weapon : MonoBehaviour
         else if (CurrentBullets == 1)
         {
             m_Animator.Play("Reload Animation");
+           AK_47.Play();
+            CurrentBullets--;
         }
 
 
