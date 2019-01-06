@@ -15,6 +15,8 @@ public class HaroldEN : MonoBehaviour
     public GameObject BulletSPPrefab;
     private GameObject BulletSP;
 
+    
+
     void Update()
     {
         transform.LookAt(ThePlayer.transform);

@@ -17,6 +17,14 @@ public class Weapon : MonoBehaviour
     Animation m_Animator;
     public AudioSource AK_47;
 
+    public GameObject bulletHole;
+
+    public float delayTime = 0.5f;
+
+    private float counter = 0;
+
+
+
     private void Start()
     {
         CurrentBullets = BulletsPerMag;
@@ -31,6 +39,7 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
 
+
         }
         else if (CurrentBullets == 1)
         {
@@ -39,7 +48,7 @@ public class Weapon : MonoBehaviour
             CurrentBullets--;
         }
 
-
+       
 
         if (fireTimer > FireRate)
             fireTimer += Time.deltaTime;
@@ -101,32 +110,32 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void mfRecoil()
+ 
+
+  
+
+    void FixedUpdate()
     {
-        transform.localEulerAngles = new Vector3(Random.Range(transform.localEulerAngles.x - 2f, transform.localEulerAngles.x - 3f), Random.Range(transform.localEulerAngles.y - 2f, transform.localEulerAngles.y + 2f), transform.localEulerAngles.z);
-    }
 
-
-    public GameObject bulletHole;
-    public float shootDistance;
-
-    void b_Bullet()
-    {
         if (Input.GetButtonDown("Fire1"))
-        {
+        {                   
+                       
             RaycastHit hit;
-            Ray bullet = new Ray(transform.position, transform.forward);
-            if (Physics.Raycast(bullet, out hit, shootDistance))
-            {
-                if (hit.collider.tag == "Wall")
-                {
-                    Instantiate(bulletHole, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                }
-            }
-        }
 
+            Ray ray = new Ray(transform.position, transform.forward);
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+            {
+                Instantiate(bulletHole, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+
+            }
+            
+        }
+        
     }
 }
+
+
 
  			
 

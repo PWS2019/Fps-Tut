@@ -62,7 +62,8 @@ Subject #5 (modern dance)
 
 05_01	walk
 05_02	dance - expressive arms, pirouette
-05_03	dance - sideways arabesque, turn step, folding arms
+05_03	dance - sideways arabesque, turn 
+, folding arms
 05_04	dance - sideways arabesque, folding arms, bending back
 05_05	dance - quasi-cou-de-pied, raised leg above hip-height, jete en tourant
 05_06	dance - cartwheel-like start, pirouettes, jete

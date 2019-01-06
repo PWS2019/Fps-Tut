@@ -1,4 +1,3 @@
-// JavaScript source code
 var bulletTex = GameObject[]; // creates an array to use random textures of bullet holes
 
 function Update() {
